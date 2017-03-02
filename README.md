@@ -1,1 +1,1 @@
-# COSC310
+# thathillguy.github.io
