@@ -1,6 +1,4 @@
 import React from 'react';
-import TopNav from '../Components/TopNav.jsx';
-import ProjectDisplay from '../Components/ProjectDisplay.jsx';
 import Pokemon from '../Components/Pokemon';
 
 
