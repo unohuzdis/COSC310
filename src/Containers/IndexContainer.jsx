@@ -1,7 +1,5 @@
 import React from 'react';
-import TopNav from '../Components/TopNav.jsx';
-import ProjectDisplay from '../Components/ProjectDisplay.jsx';
-import Pokemon from '../Components/Pokemon';
+import Configure from '../Components/Configure';
 
 
 const styles = {
@@ -34,12 +32,7 @@ export default class IndexContainer extends React.Component {
 
     render() {
         return (
-
-            <Pokemon />
-            //     <div style={styles.BackgroundStyle}>
-            //         <TopNav style={styles.NavbarStyle}/>
-            //         <ProjectDisplay style={styles.ProjectDisplayStyle}/>
-            //     </div>
+            <Configure />
         )
     }
 }

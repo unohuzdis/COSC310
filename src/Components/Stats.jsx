@@ -6,7 +6,7 @@ import Stat from './Stat'
 
 let style = {width: '40%'}
 
-export default class Configure extends React.Component {
+export default class Stats extends React.Component {
 
     constructor(props) {
         super(props);
@@ -27,17 +27,14 @@ export default class Configure extends React.Component {
     }
     render() {
         return (
-            <div>
-                <Pokemon />
-                <div style={style}>
+            <Paper style={style}>
                 <Stat id='hp' value={this.state.hp} onChange={this.onChange.bind(this)}/>
                 <Stat id='atk' value={this.state.atk} onChange={this.onChange.bind(this)}/>
                 <Stat id='def' value={this.state.def} onChange={this.onChange.bind(this)}/>
                 <Stat id='spatk' value={this.state.spatk} onChange={this.onChange.bind(this)}/>
                 <Stat id='spdef' value={this.state.spdef} onChange={this.onChange.bind(this)}/>
                 <Stat id='spd' value={this.state.spd} onChange={this.onChange.bind(this)}/>
-                </div>
-            </div>
+            </Paper>
         )
     }
 }

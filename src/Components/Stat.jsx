@@ -10,7 +10,7 @@ let styles = {
     header: {width: '5%', height: '100%', display: 'inline-block', marginRight: '5%',}
 };
 
-export default class Stat extends React.Component {
+export default class Stats extends React.Component {
 
     constructor(props) {
         super(props);
