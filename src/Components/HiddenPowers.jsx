@@ -17,150 +17,139 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
     },
-};
-
-export default class ChipExampleSimple extends React.Component {
-
-    render(){
-        return(
-           <div style={styles.wrapper}>
-                <Chip
-                backgroundColor={red500}
-                style={styles.chip}
-                >
-                    TEST CHIP!
-                </Chip>
-           </div>
-        );
-    }
-
-
-
 }
 
-const defense = this.props.state.atk;
-const attack = this.props.state.def;
-var hPower = 4 * attack%4 + defense%4;
-
-var defineHP = React.createClass({
-
-    hpSelect: function (hPower) {
+export default class HiddenPowers extends React.Component {
+    render() {
+        let hPower = this.calculateHPower();
+        return this.hpSelect(hPower)
+    }
+    calculateHPower(){
+        let a = this.props.stats.hp;
+        let b = this.props.stats.atk;
+        let c = this.props.stats.def;
+        let d = this.props.stats.spd;
+        let e = this.props.stats.spatk;
+        let f = this.props.stats.spdef;
+        return ((a + 2*b + 4*c + 8*d + 16*e + 32*f) * 15) / 63;
+    }
+    hpSelect (hPower) {
         switch (hPower) {
             case 0 :
                 return <Chip
-                    backgroundColor={red500}
+                    backgroundColor={'#8B0000'}
                     style={styles.chip}
                 >
                     Fighting
                 </Chip>;
             case 1 :
                 return <Chip
-                    backgroundColor={deepPurple200}
+                    backgroundColor={'#00BFFF'}
                     style={styles.chip}
                 >
                     Flying
                 </Chip>;
             case 2 :
                 return <Chip
-                    backgroundColor={purple400}
+                    backgroundColor={'#8B008B'}
                     style={styles.chip}
                 >
                     Poison
                 </Chip>;
             case 3 :
                 return <Chip
-                    backgroundColor={amberA100}
+                    backgroundColor={'#B8860B'}
                     style={styles.chip}
                 >
                     Ground
                 </Chip>;
             case 4 :
                 return <Chip
-                    backgroundColor={brown300}
+                    backgroundColor={'#696969'}
                     style={styles.chip}
                 >
                     Rock
                 </Chip>;
             case 5 :
                 return <Chip
-                    backgroundColor={limeA400}
+                    backgroundColor={'#7FFF00'}
                     style={styles.chip}
                 >
                     Bug
                 </Chip>;
             case 6 :
                 return <Chip
-                    backgroundColor={deepPurple600}
+                    backgroundColor={'#4B0082'}
                     style={styles.chip}
                 >
                     Ghost
                 </Chip>;
             case 7 :
                 return <Chip
-                    backgroundColor={grey400}
+                    backgroundColor={'#D3D3D3'}
                     style={styles.chip}
                 >
                     Steel
                 </Chip>;
             case 8 :
                 return <Chip
-                    backgroundColor={orange500}
+                    backgroundColor={'#FF4500'}
                     style={styles.chip}
                 >
                     Fire
                 </Chip>;
             case 9 :
                 return <Chip
-                    backgroundColor={lightBlue300}
+                    backgroundColor={'#B0E0E6'}
                     style={styles.chip}
                 >
                     Water
                 </Chip>;
             case 10 :
                 return <Chip
-                    backgroundColor={green500}
+                    backgroundColor={'	#228B22'}
                     style={styles.chip}
                 >
                     Grass
                 </Chip>;
             case 11 :
                 return <Chip
-                    backgroundColor={yellow500}
+                    backgroundColor={'#FFFF00'}
                     style={styles.chip}
                 >
-                    Atomic
+                    Electric
                 </Chip>;
             case 12 :
                 return <Chip
-                    backgroundColor={pink400}
+                    backgroundColor={'#FF00FF'}
                     style={styles.chip}
                 >
                     Psychic
                 </Chip>;
             case 13 :
                 return <Chip
-                    backgroundColor={lightBlue100}
+                    backgroundColor={'#E0FFFF'}
                     style={styles.chip}
                 >
                     Ice
                 </Chip>;
             case 14:
                 return <Chip
-                    backgroundColor={indigoA400}
+                    backgroundColor={'#4B0082'}
                     style={styles.chip}
                 >
                     Dragon
                 </Chip>;
             case 15 :
                 return <Chip
-                    backgroundColor={brown700}
+                    backgroundColor={'#191970'}
                     style={styles.chip}
                 >
                     Dark
                 </Chip>;
         }
     }
-});
+}
 
 
 
