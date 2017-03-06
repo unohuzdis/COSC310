@@ -8,7 +8,8 @@ export default class Pokemon extends React.Component {
     }
     render() {
         return (
-            <Paper>
+            <Paper >
+                <img src="http://www.smogon.com/dex/media/sprites/xy/pikachu.gif" />
             </Paper>
         )
     }
