@@ -1,5 +1,5 @@
 import React from 'react';
-import Configure from '../Components/Configure';
+import HeldItem from '../Components/HeldItem';
 
 
 const styles = {
@@ -32,7 +32,7 @@ export default class IndexContainer extends React.Component {
 
     render() {
         return (
-            <Configure />
+            <HeldItem />
         )
     }
 }
