@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Configure from '../Components/Configure';
+import HiddenPowers from '../Components/HiddenPowers';
 
 
 const styles = {
@@ -32,7 +34,7 @@ export default class IndexContainer extends React.Component {
 
     render() {
         return (
-            <Configure />
+            <HeldItem />
         )
     }
 }
