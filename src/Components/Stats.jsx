@@ -1,39 +1,28 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-import Slider from 'material-ui/Slider';
-import Pokemon from './Pokemon';
+import Chart from './Chart'
 import Stat from './Stat'
 
-let style = {width: '40%'}
+let style = {width: '100%'};
 
 export default class Stats extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            hp: 0,
-            atk: 0,
-            def: 0,
-            spatk: 0,
-            spdef: 0,
-            spd: 0,
-        }
     }
-    onChange(name, value){
-        let newState = {};
-        newState[name] = value;
-        this.setState(newState);
 
-    }
     render() {
         return (
             <Paper style={style}>
-                <Stat id='hp' value={this.state.hp} onChange={this.onChange.bind(this)}/>
-                <Stat id='atk' value={this.state.atk} onChange={this.onChange.bind(this)}/>
-                <Stat id='def' value={this.state.def} onChange={this.onChange.bind(this)}/>
-                <Stat id='spatk' value={this.state.spatk} onChange={this.onChange.bind(this)}/>
-                <Stat id='spdef' value={this.state.spdef} onChange={this.onChange.bind(this)}/>
-                <Stat id='spd' value={this.state.spd} onChange={this.onChange.bind(this)}/>
+                <div style={{display: 'inline-block', float: 'left' ,width: '40%', position:'relative'}}>
+                    <Stat id='hp' value={this.props.stats.hp} onChange={this.props.onChange}/>
+                    <Stat id='atk' value={this.props.stats.atk} onChange={this.props.onChange}/>
+                    <Stat id='def' value={this.props.stats.def} onChange={this.props.onChange}/>
+                    <Stat id='spatk' value={this.props.stats.spatk} onChange={this.props.onChange}/>
+                    <Stat id='spdef' value={this.props.stats.spdef} onChange={this.props.onChange}/>
+                    <Stat id='spd' value={this.props.stats.spd} onChange={this.props.onChange}/>
+                </div>
+                <Chart stats={this.props.stats} style={{display: 'inline-block', float: 'right' ,width: '50%', position:'relative', bottom: '10%'}}/>
             </Paper>
         )
     }
