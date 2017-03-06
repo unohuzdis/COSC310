@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Configure from '../Components/Configure';
 import HiddenPowers from '../Components/HiddenPowers';
 
@@ -33,7 +34,7 @@ export default class IndexContainer extends React.Component {
 
     render() {
         return (
-            <Configure />
+            <HeldItem />
         )
     }
 }
