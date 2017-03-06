@@ -1,5 +1,6 @@
 import React from 'react';
 import Configure from '../Components/Configure';
+import HiddenPowers from '../Components/HiddenPowers';
 
 
 const styles = {
