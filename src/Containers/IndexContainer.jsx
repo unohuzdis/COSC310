@@ -1,5 +1,7 @@
 import React from 'react';
-import HeldItem from '../Components/HeldItem';
+
+import Configure from '../Components/Configure';
+import HiddenPowers from '../Components/HiddenPowers';
 
 
 const styles = {
