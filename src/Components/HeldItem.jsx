@@ -1,21 +1,8 @@
 import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import Pokemon from './Pokemon';
 
-
-const styles = {
-    customWidth: {
-        width: 150,
-    },
-};
-let items = ["Destiny Knot", "EverStone", "Power Weight", "Power Bracer", "Power Belt", "Power Lens", "Power Band", "Power Anklet"];
-/**
- * `SelectField` is implemented as a controlled component,
- * with the current selection set through the `value` property.
- * The `SelectField` can be disabled with the `disabled` property.
- */
-export default class SelectFieldExampleSimple extends Component {
+export default class HeldItem extends Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +10,7 @@ export default class SelectFieldExampleSimple extends Component {
             value: 1,
         };
     }
-    handleChange(event, index, value){
+    handleChange(value){
         this.setState({value});
     }
 
@@ -31,46 +18,19 @@ export default class SelectFieldExampleSimple extends Component {
         return (
             <div>
                 <SelectField
-                    floatingLabelText="Frequency"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                >
-                    <MenuItem value={1} primaryText="Never" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
-                <br />
-                <SelectField floatingLabelText="Frequency" value={1} disabled={true}>
-                    <MenuItem value={1} primaryText="Disabled" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                </SelectField>
-                <br />
-                <SelectField
-                    floatingLabelText="Frequency"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    style={styles.customWidth}
-                >
-                    <MenuItem value={1} primaryText="Custom width" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
-                <br />
-                <SelectField
-                    floatingLabelText="Frequency"
+                    floatingLabelText="Held Item"
                     value={this.state.value}
                     onChange={this.handleChange}
                     autoWidth={true}
                 >
-                    <MenuItem value={1} primaryText="Auto width" />
-                    <MenuItem value={2} primaryText="Every Night" />
-                    <MenuItem value={3} primaryText="Weeknights" />
-                    <MenuItem value={4} primaryText="Weekends" />
-                    <MenuItem value={5} primaryText="Weekly" />
+                    <MenuItem value={1} primaryText="Destiny Knot" />
+                    <MenuItem value={2} primaryText="Everstone" />
+                    <MenuItem value={3} primaryText="Power Weight (HP)" />
+                    <MenuItem value={4} primaryText="Power Bracer (Atk)" />
+                    <MenuItem value={5} primaryText="Power Belt (Def)" />
+                    <MenuItem value={6} primaryText="Power Lens (SpAtk)" />
+                    <MenuItem value={7} primaryText= "Power Band (SpDef)" />
+                    <MenuItem value={8} primaryText="Power Anklet (Speed)" />
                 </SelectField>
             </div>
         );
