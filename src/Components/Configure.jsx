@@ -29,7 +29,6 @@ export default class Configure extends React.Component {
             <div>
                 <Pokemon />
                 <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
-
             </div>
         )
     }
