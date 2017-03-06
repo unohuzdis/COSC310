@@ -12,7 +12,7 @@ export default class Configure extends React.Component {
     render() {
         return(
             <div>
-                <Pokemon/>
+                <Pokemon />
                 <Stats />
             </div>
         )
