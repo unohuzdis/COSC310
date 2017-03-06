@@ -24,6 +24,7 @@
   },
   "scripts": {
     "test": "test",
+    "build": "webpack -p",
     "watch": "webpack-dev-server --hot --watch --inline --progress"
   },
   "repository": {
