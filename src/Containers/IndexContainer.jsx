@@ -34,7 +34,7 @@ export default class IndexContainer extends React.Component {
 
     render() {
         return (
-            <HeldItem />
+            <Configure />
         )
     }
 }

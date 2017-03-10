@@ -18,16 +18,16 @@ export default class Abilities extends Component{
     }
 
     render(){
-        let displayAbilities = abilities.map((ability, item) => {
+        let displayAbilities = abilities.map((ability, id) => {
             return (<MenuItem key={id}
-                              value={item}
+                              value={id}
                               primaryText={ability}/> )
         })
         return (
             <SelectField
                 floatingLabelText="Ability"
                 value={this.state.value}
-                onChange={this.handleChange()}
+                onChange={this.handleChange.bind(this)}
                 autoWidth={true}
             >
                 {displayAbilities}
