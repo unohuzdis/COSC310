@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
+import { myAction} from '../Actions/pokeActions';
 
 import Configure from '../Components/Configure';
 import HiddenPowers from '../Components/HiddenPowers';
@@ -50,6 +51,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        my_action: () => {
+            dispatch(myAction())
+        }
 
     }
 };
