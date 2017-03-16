@@ -11,6 +11,8 @@
     "react-d3-basic": "^1.6.11",
     "react-dom": "^15.3.2",
     "react-tap-event-plugin": "^2.0.0",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
