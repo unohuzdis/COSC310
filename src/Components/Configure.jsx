@@ -1,7 +1,8 @@
 import React from 'react';
 import Pokemon from './Pokemon';
 import Stats from './Stats'
-
+import SortedEggGroups from './SortedEggGroups'
+import Abilities from './Abilities'
 
 let style = {width: '40%'}
 
@@ -27,8 +28,10 @@ export default class Configure extends React.Component {
     render() {
         return(
             <div>
-                <Pokemon />
+                <Pokemon /><br/>
                 <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
+                <SortedEggGroups /><br/>
+                <Abilities />
             </div>
         )
     }
