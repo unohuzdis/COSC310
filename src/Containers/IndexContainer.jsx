@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
-
-
 import Configure from '../Components/Configure';
 import HiddenPowers from '../Components/HiddenPowers';
 
@@ -33,7 +30,7 @@ const styles = {
     },
 };
 
-class IndexContainer extends React.Component {
+export default class IndexContainer extends React.Component {
 
     render() {
         return (
@@ -41,23 +38,3 @@ class IndexContainer extends React.Component {
         )
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
-};
-
-const Index = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(IndexContainer);
-
-export default Index;
-
