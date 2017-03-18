@@ -1,0 +1,65 @@
+/*created by Wasek Habib
+on 16/03/2017
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.row::before,
+.row::after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.one,
+.one-third,
+.two-thirds,
+.one-fourth,
+.half {
+    width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+    .one {
+        width: 100%;
+    }
+    .half {
+        width: calc(100% / 2);
+    }
+    .one-third {
+        width: calc(100% / 3);
+    }
+    .one-fourth {
+        width: calc(100% / 4);
+    }
+    .two-thirds {
+        width: calc(100% / 3 * 2);
+    }
+    .column {
+        float: left;
+    }
+}
+/* Styling */
+
+body {
+    /*background-color: rgba(158, 158, 158, 0.1);*/
+    /*    padding: 0 10px;*/
+}
+
+.column {
+    padding: 15px;
+    /*    margin-bottom: 10px;*/
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
