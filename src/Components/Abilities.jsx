@@ -13,8 +13,8 @@ export default class Abilities extends Component{
 
 
 
-    handleChange(value){
-        this.setState({value});
+    handleChange(event, value){
+        this.setState({value: value});
     }
 
     render(){
