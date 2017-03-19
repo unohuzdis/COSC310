@@ -1,23 +1,19 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import '../Styles/responsive.css'
 
 const style = {
     height: 100,
     width: 100,
-    margin: 20,
+    margin: '5%',
     textAlign: 'center',
-    display: 'inline-block',
+    float: 'left',
+    display: 'inline-block'
 };
 
-const PaperExampleCircle = () => (
-    <div>
-        <Paper style = {style} zDepth={2} circle={true} />
-    </div>
-);
 
-export default PaperExampleCircle;
 
-export default class littlePokemon extends React.Component{
+export default class littlePokemon extends React.Component {
 
     constructor(props) {
         super(props);
@@ -26,19 +22,24 @@ export default class littlePokemon extends React.Component{
             name: "Pikachu",
             type: "Electric",
             url: "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif",
-            top: '132px',
-            left:'125%'
+            // top: '132px',
+            // left: '125%'
         }
     }
 
 
     render() {
+        console.log(this.props.pokemon.POKEMON.toLowerCase());
         return (
-           <div>
-            <Paper style={style}>
-                <img url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"/>
+            <div>
+            <Paper style={style} circle={true} >
+                <img className='responsive-img'
+                     src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`}/>
+                <h3> {this.props.pokemon.POKEMON}</h3>
             </Paper>
-               <h3> {this.state.name}</h3>
+
+
+
            </div>
         )
     }
