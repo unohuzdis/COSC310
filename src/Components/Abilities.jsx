@@ -27,7 +27,7 @@ export default class Abilities extends Component{
             <SelectField
                 floatingLabelText="Ability"
                 value={this.state.value}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange()}
                 autoWidth={true}
             >
                 {displayAbilities}

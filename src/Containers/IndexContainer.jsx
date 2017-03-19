@@ -1,8 +1,13 @@
 import React from 'react';
 
-import Configure from '../Components/Configure';
-import HiddenPowers from '../Components/HiddenPowers';
 
+import { connect } from 'react-redux';
+
+import { myAction} from '../Actions/pokeActions';
+
+
+import Configure from '../Components/Configure';
+import PokeView from '../Components/PokeView';
 
 const styles = {
     BackgroundStyle: {
@@ -30,11 +35,38 @@ const styles = {
     },
 };
 
-export default class IndexContainer extends React.Component {
+ class IndexContainer extends React.Component {
 
     render() {
         return (
+        <div>
             <Configure />
+            <PokeView pokemon={this.props.pokedex} />
+        </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        pokedex: state.pokemon
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        my_action: () => {
+            dispatch(myAction())
+        }
+
+    }
+};
+
+const Index = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)
+(IndexContainer);
+export default Index;
+

@@ -34,8 +34,6 @@ export default class Configure extends React.Component {
                 <Pokemon /><br/>
                 <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
 
-                <SortedEggGroups />
-
                 <SortedEggGroups /><br/>
                 <Abilities />
 
