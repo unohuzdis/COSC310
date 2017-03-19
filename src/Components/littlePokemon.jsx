@@ -26,14 +26,24 @@ export default class littlePokemon extends React.Component {
         }
     }
 
+    // eggGroup(){
+    //     if (this.prop.pokemon === "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"){
+    //         this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f-5.gif", top:'32px'});
+    //     }
+    //     else{
+    //         this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif", top:'132px'});
+    //     }
+    //
+    // }
+
 
     render() {
         console.log(this.props.pokemon.POKEMON.toLowerCase());
         return (
-            <div>
+            <div onClick={this.props.addFilter.bind(this, this.props.pokemon["EGG GROUPS"])}>
             <Paper style={style} circle={true} >
                 <img className='responsive-img'
-                     src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`} />
+                     src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`}/>   src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`} />
                 <h5> {this.props.pokemon.POKEMON}</h5>
             </Paper>
 
