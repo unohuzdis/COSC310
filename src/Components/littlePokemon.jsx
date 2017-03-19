@@ -1,23 +1,20 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import '../Styles/responsive.css'
 
 const style = {
-    height: 100,
-    width: 100,
-    margin: 20,
+    height: 75,
+    width: 75,
+    marginLeft: 10,
+    marginBottom:20,
     textAlign: 'center',
-    display: 'inline-block',
+    float: 'left',
+    display: 'inline-block'
 };
 
-const PaperExampleCircle = () => (
-    <div>
-        <Paper style = {style} zDepth={2} circle={true} />
-    </div>
-);
 
-export default PaperExampleCircle;
 
-export default class littlePokemon extends React.Component{
+export default class littlePokemon extends React.Component {
 
     constructor(props) {
         super(props);
@@ -26,19 +23,31 @@ export default class littlePokemon extends React.Component{
             name: "Pikachu",
             type: "Electric",
             url: "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif",
-            top: '132px',
-            left:'125%'
         }
     }
+
+    // eggGroup(){
+    //     if (this.prop.pokemon === "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"){
+    //         this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f-5.gif", top:'32px'});
+    //     }
+    //     else{
+    //         this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif", top:'132px'});
+    //     }
+    //
+    // }
 
 
     render() {
         return (
-           <div>
-            <Paper style={style}>
-                <img url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"/>
+            <div onClick={this.props.addFilter.bind(this, this.props.pokemon["EGG GROUPS"])}>
+            <Paper style={style} circle={true} >
+                <img className='responsive-img'
+                     src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`}/>
+                <h5> {this.props.pokemon.POKEMON}</h5>
             </Paper>
-               <h3> {this.state.name}</h3>
+
+
+
            </div>
         )
     }
