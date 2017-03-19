@@ -3,7 +3,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { myAction} from '../Actions/pokeActions';
+import { myAction, addFilters} from '../Actions/pokeActions';
 
 
 import Configure from '../Components/Configure';
@@ -38,19 +38,22 @@ const styles = {
  class IndexContainer extends React.Component {
 
     render() {
+        console.log(this.props.pokemon);
         return (
         <div>
             <Configure />
-            <PokeView pokemon={this.props.pokedex} />
+            <PokeView addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    console.log(state.filters.size);
     return {
-        pokedex: state.pokemon
+        pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
+                    return state.filters.has(pokemon["EGG GROUPS"])
+            }) : state.pokemon
     }
 };
 
@@ -58,6 +61,10 @@ const mapDispatchToProps = (dispatch) => {
     return {
         my_action: () => {
             dispatch(myAction())
+        },
+        addFilters: (filters) => {
+            console.log(filters["EGG GROUPS"])
+            dispatch(addFilters([filters["EGG GROUPS"]]))
         }
 
     }
