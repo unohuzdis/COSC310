@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 import { myAction} from '../Actions/pokeActions';
 
 import Configure from '../Components/Configure';
-import HiddenPowers from '../Components/HiddenPowers';
-
+import PokeView from '../Components/PokeView';
 
 const styles = {
     BackgroundStyle: {
@@ -38,14 +37,18 @@ class IndexContainer extends React.Component {
 
     render() {
         return (
+        <div>
             <Configure />
+            <PokeView pokemon={this.props.pokedex} />
+        </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-
+        pokedex: state.pokemon
     }
 };
 
