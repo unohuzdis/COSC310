@@ -1,7 +1,11 @@
 import React from 'react';
 import Pokemon from './Pokemon';
 import Stats from './Stats'
+<<<<<<< HEAD
 import SortedEggGroups from './SortedEggGroups'
+=======
+
+>>>>>>> parent of d1cf4f9... Created the pokemon onClick to display the selected pokemon.
 
 let style = {width: '40%'}
 
@@ -29,7 +33,10 @@ export default class Configure extends React.Component {
             <div>
                 <Pokemon />
                 <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
+<<<<<<< HEAD
                 <SortedEggGroups />
+=======
+>>>>>>> parent of d1cf4f9... Created the pokemon onClick to display the selected pokemon.
             </div>
         )
     }

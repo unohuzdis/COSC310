@@ -3,6 +3,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { myAction, addFilters} from '../Actions/pokeActions';
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of d1cf4f9... Created the pokemon onClick to display the selected pokemon.
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
 
@@ -32,7 +36,11 @@ const styles = {
     },
 };
 
+<<<<<<< HEAD
 export default class IndexContainer extends React.Component {
+=======
+class IndexContainer extends React.Component {
+>>>>>>> parent of d1cf4f9... Created the pokemon onClick to display the selected pokemon.
 
     render() {
         console.log(this.props.pokemon);
