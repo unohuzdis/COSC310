@@ -12,9 +12,10 @@ export default class pokeView extends Component{
     }
 
     render(){
+        console.log(this);
         let displayPokemons = this.props.pokemon.map((pokemon, id) => {
             return (
-                <LittlePokemon selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilter.bind(this, pokemon)} key={id} pokemon={pokemon} />)
+                <LittlePokemon addFilter={this.props.addFilter.bind(this, pokemon)} key={id} pokemon={pokemon} />)
         });
 
         return (

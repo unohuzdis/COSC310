@@ -42,6 +42,20 @@ export const pokedex = [
         "OBTAINABLE IN": "YES"
     },
     {
+        "DEX": 3,
+        "POKEMON": "Venusaur",
+        "TYPE 1": "Grass",
+        "TYPE 2": "Poison",
+        "ABILITIES 1": "Thick Fat",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": 80,
+        "OBTAINABLE IN": "YES"
+    },
+    {
         "DEX": 4,
         "POKEMON": "Charmander",
         "TYPE 1": "Fire",
@@ -98,6 +112,34 @@ export const pokedex = [
         "OBTAINABLE IN": "YES"
     },
     {
+        "DEX": 6,
+        "POKEMON": "Charizard",
+        "TYPE 1": "Fire",
+        "TYPE 2": "Flying",
+        "ABILITIES 1": "Drought",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": 78,
+        "OBTAINABLE IN": "YES"
+    },
+    {
+        "DEX": 7,
+        "POKEMON": "Squirtle",
+        "TYPE 1": "Water",
+        "TYPE 2": "",
+        "ABILITIES 1": "Torrent",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "Rain Dish",
+        "EVOLUTION DETAILS": "Level Up - 16",
+        "EGG GROUPS": "Monster",
+        "": "NO",
+        "BASE STATS": 44,
+        "OBTAINABLE IN": "YES"
+    },
+    {
         "DEX": 8,
         "POKEMON": "Wartortle",
         "TYPE 1": "Water",
@@ -122,6 +164,20 @@ export const pokedex = [
         "EVOLUTION DETAILS": "",
         "EGG GROUPS": "Monster",
         "": "NO",
+        "BASE STATS": 79,
+        "OBTAINABLE IN": "YES"
+    },
+    {
+        "DEX": 9,
+        "POKEMON": "Blastoise",
+        "TYPE 1": "Water",
+        "TYPE 2": "",
+        "ABILITIES 1": "Mega Launcher",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
         "BASE STATS": 79,
         "OBTAINABLE IN": "YES"
     },
@@ -210,6 +266,20 @@ export const pokedex = [
         "OBTAINABLE IN": "YES"
     },
     {
+        "DEX": 15,
+        "POKEMON": "Beedrill",
+        "TYPE 1": "Bug",
+        "TYPE 2": "Poison",
+        "ABILITIES 1": "Adaptability",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": 65,
+        "OBTAINABLE IN": "NO"
+    },
+    {
         "DEX": 16,
         "POKEMON": "Pidgey",
         "TYPE 1": "Normal",
@@ -250,6 +320,20 @@ export const pokedex = [
         "": "YES",
         "BASE STATS": 83,
         "OBTAINABLE IN": "YES"
+    },
+    {
+        "DEX": 18,
+        "POKEMON": "Pidgeot",
+        "TYPE 1": "Normal",
+        "TYPE 2": "Flying",
+        "ABILITIES 1": "No Guard",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": 83,
+        "OBTAINABLE IN": "NO"
     },
     {
         "DEX": 19,
@@ -669,6 +753,20 @@ export const pokedex = [
         "EGG GROUPS": "Grass",
         "": "YES",
         "BASE STATS": 60,
+        "OBTAINABLE IN": "YES"
+    },
+    {
+        "DEX": "",
+        "POKEMON": "",
+        "TYPE 1": "",
+        "TYPE 2": "",
+        "ABILITIES 1": "",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "Sun Stone",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": "",
         "OBTAINABLE IN": "YES"
     },
     {
@@ -1218,6 +1316,20 @@ export const pokedex = [
         "OBTAINABLE IN": "YES"
     },
     {
+        "DEX": "",
+        "POKEMON": "",
+        "TYPE 1": "",
+        "TYPE 2": "",
+        "ABILITIES 1": "",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "Trade - w/Kings Rock",
+        "EGG GROUPS": "",
+        "": "",
+        "BASE STATS": "",
+        "OBTAINABLE IN": ""
+    },
+    {
         "DEX": 80,
         "POKEMON": "Slowbro",
         "TYPE 1": "Water",
@@ -1230,6 +1342,20 @@ export const pokedex = [
         "": "YES",
         "BASE STATS": 95,
         "OBTAINABLE IN": "YES"
+    },
+    {
+        "DEX": 80,
+        "POKEMON": "Slowbro",
+        "TYPE 1": "Water",
+        "TYPE 2": "Psychic",
+        "ABILITIES 1": "Shell Armor",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "",
+        "EVOLUTION DETAILS": "",
+        "EGG GROUPS": "",
+        "": "YES",
+        "BASE STATS": 95,
+        "OBTAINABLE IN": "NO"
     },
     {
         "DEX": 199,
