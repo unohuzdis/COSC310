@@ -3,6 +3,11 @@ import Pokemon from './Pokemon';
 import Stats from './Stats'
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Moves from './Moves';
+import SortedEggGroups from './SortedEggGroups';
+
+
+
+import Abilities from './Abilities'
 
 
 let style = {width: '40%'}
@@ -37,6 +42,8 @@ export default class Configure extends React.Component {
                        <Moves moves={this.props.moves}/>
                     </Tab>
                 </Tabs>
+                <SortedEggGroups removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
+                <Abilities />
             </div>
         )
     }
