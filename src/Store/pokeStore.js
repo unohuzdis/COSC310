@@ -4,6 +4,8 @@ const initialState = {
     pokemon: pokedex,
     filters: new Set()
 };
+const urlPlain = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif";
+const urlShiny = "http://www.pokestadium.com/sprites/xy/shiny/pikachu-female.gif";
 const pokeStore = (state = initialState, action) => {
     switch (action.type) {
         default:
@@ -18,7 +20,15 @@ const pokeStore = (state = initialState, action) => {
             console.log(newfilters, state.filters);
             return {
                 pokemon: state.pokemon,
-                filters: newfilters
+                filters: newfilters,
+                url: state.url
+            }
+        case "MYSHINY":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                url: action.shiny ? urlShiny : urlPlain
+
             }
     }
 };

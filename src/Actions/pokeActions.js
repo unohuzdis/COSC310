@@ -7,3 +7,9 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+export const myShiny = (shiny) => {
+    return {
+        type: "MYSHINY",
+        shiny: shiny
+    }
+};

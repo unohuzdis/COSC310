@@ -2,26 +2,29 @@ import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Paper from 'material-ui/Paper';
 
-styles = {
+const styles = {
     block: {
         maxWidth: 250,
     },
     checkbox: {
         marginBottom: 16,
+        width: 100,
     },
     paper: {
-        width: 550,
+        width: 650,
         height: 100,
+        zIndex: 1,
 
     },
     selectField: {
-        width: 550,
+        width: 650,
 
     }
 };
 
-export default class ShinyCheck extends Component {
+export default class ShinyCheck extends React.Component {
 
     constructor(props) {
         super(props);
@@ -35,6 +38,7 @@ export default class ShinyCheck extends Component {
     }
 
     handleCheck(e) {
+        this.props.shinyCheck(!this.state.checked);
         this.setState({checked: !this.state.checked})
     }
 

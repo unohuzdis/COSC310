@@ -27,7 +27,7 @@ export default class Configure extends React.Component {
     render() {
         return(
             <div>
-                <Pokemon />
+                <Pokemon url={this.props.url} />
                 <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
             </div>
         )
