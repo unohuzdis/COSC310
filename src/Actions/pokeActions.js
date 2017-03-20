@@ -7,3 +7,15 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+export const selectPokemon = (pokemon) => {
+    return {
+        type: "SELECTPOKEMON",
+        pokemon: pokemon
+    }
+};
+export const getMoves = (moves) => {
+    return {
+        type: "GETMOVES",
+        moves: moves
+    }
+}

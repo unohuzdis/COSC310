@@ -1,7 +1,9 @@
 import React from 'react';
 import Pokemon from './Pokemon';
 import Stats from './Stats'
-import SortedEggGroups from './SortedEggGroups'
+import {Tabs, Tab} from 'material-ui/Tabs';
+import Moves from './Moves';
+
 
 let style = {width: '40%'}
 
@@ -17,8 +19,7 @@ export default class Configure extends React.Component {
             spdef: 0,
             spd: 0,
         }
-    }
-    onChange(name, value){
+    } onChange(name, value){
         let newState = {};
         newState[name] = value;
         this.setState(newState);
@@ -27,9 +28,15 @@ export default class Configure extends React.Component {
     render() {
         return(
             <div>
-                <Pokemon />
-                <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
-                <SortedEggGroups />
+                <Pokemon pokemon={this.props.pokemon} />
+                <Tabs>
+                    <Tab label="stats" >
+                        <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
+                    </Tab>
+                    <Tab label="moves" >
+                       <Moves moves={this.props.moves}/>
+                    </Tab>
+                </Tabs>
             </div>
         )
     }

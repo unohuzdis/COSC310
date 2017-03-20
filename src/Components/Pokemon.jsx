@@ -1,11 +1,15 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
-
+import HeldItem from './HeldItem';
+import Types from './Types';
+import Abilities from './Abilities'
 const style = {
-    // height: 200,
+    left: '30%',
+    height: '30%',
     width: "40%",
     textAlign: 'center',
-    display: 'inline-block'
+    display: 'inline-block',
+    position: 'relative'
 };
 
 export default class Pokemon extends React.Component {
@@ -16,31 +20,27 @@ export default class Pokemon extends React.Component {
         this.state = {
             name: "Pikachu",
             type: "Electric",
-            url: "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif",
+            top: '132px',
+            left:'125%'
         }
 
         // this.updateState = this.updateState.bind(this);
     }
 
-    updateState() {
-
-        if (this.state.url === "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"){
-            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f-5.gif" });
-        }
-        else{
-            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif" });
-        }
-
-    }
-
     render() {
         return (
-            <Paper style={style}>
-                <img src={this.state.url} onClick={this.updateState.bind(this)}/>
-                <h3>{this.state.name}</h3>
-                <p>{this.state.type}</p>
-            </Paper>
-
+            <div style={{width: '100%'}}>
+                <Paper style={style}>
+                    <div style={{height: '192px', width:'192px', left:'100%'}} >
+                        <img  style={{position: 'relative', top: this.state.top, left:this.state.left}}
+                              src={`http://www.pkparaiso.com/imagenes/xy/sprites/animados/${this.props.pokemon.POKEMON.toLowerCase()}.gif`}/>
+                    </div>
+                    <h3>{this.props.pokemon.POKEMON}</h3>
+                    <Types type={this.props.pokemon["TYPE 1"] || "Electric"} />
+                </Paper>
+                <HeldItem />
+                <Abilities />
+            </div>
         )
 
     }
