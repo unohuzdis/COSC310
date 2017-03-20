@@ -14,7 +14,7 @@ const styles = {
     chip: {
         margin: 4,
         display: 'inline-block',
-        fontColor: '#ffffff',
+        fontColor: '#ffffff'
     },
     wrapper: {
         display: 'flex',
@@ -32,24 +32,17 @@ const styles = {
 export default class HiddenPowers extends React.Component {
     render() {
         let hPower = this.calculateHPower();
-        return (
-            <div >
-                <h4 style={{display: 'inline-block'}}>
-                    HIDDEN POWER TYPE:
-                </h4>
-                {this.hpSelect(hPower)}
-            </div>
-        )
+        return this.hpSelect(hPower)
     }
 
     calculateHPower(){
-        let a = this.props.stats.hp%2;
-        let b = this.props.stats.atk%2;
-        let c = this.props.stats.def%2;
-        let d = this.props.stats.spd%2;
-        let e = this.props.stats.spatk%2;
-        let f = this.props.stats.spdef%2;
-        return Math.floor(((a + 2*b + 4*c + 8*d + 16*e + 32*f) * 15) / 63);
+        let a = this.props.stats.hp;
+        let b = this.props.stats.atk;
+        let c = this.props.stats.def;
+        let d = this.props.stats.spd;
+        let e = this.props.stats.spatk;
+        let f = this.props.stats.spdef;
+        return ((a + 2*b + 4*c + 8*d + 16*e + 32*f) * 15) / 63;
     }
     hpSelect (hPower) {
         switch (hPower) {

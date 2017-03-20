@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { myAction, addFilters} from '../Actions/pokeActions';
-
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
 
@@ -33,7 +32,7 @@ const styles = {
     },
 };
 
-class IndexContainer extends React.Component {
+export default class IndexContainer extends React.Component {
 
     render() {
         console.log(this.props.pokemon);
@@ -45,7 +44,6 @@ class IndexContainer extends React.Component {
         )
     }
 }
-
 const mapStateToProps = (state) => {
     console.log(state.filters.size);
     return {
@@ -74,4 +72,3 @@ const Index = connect(
 )(IndexContainer);
 
 export default Index;
-

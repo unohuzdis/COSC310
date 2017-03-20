@@ -4,10 +4,10 @@ import Slider from 'material-ui/Slider';
 import Pokemon from './Pokemon';
 
 let styles = {
-    div: {height: '5%', marginBottom:'5%', marginLeft:'2%'},
-    slider: {width: '75%', height: '80%', marginRight: '2%', display: 'inline-block'},
-    display: {width: '5%', height: '100%', display: 'inline-block', top:'5%', position:'relative'},
-    header: {width: '3%', height: '100%', display: 'inline-block', marginRight: '3%'}
+    div: {height: '5%'},
+    slider: {width: '70%', height: '80%', marginRight: '2%', display: 'inline-block'},
+    display: {width: '5%', height: '100%', display: 'inline-block'},
+    header: {width: '5%', height: '100%', display: 'inline-block', marginRight: '5%',}
 };
 
 export default class Stats extends React.Component {
