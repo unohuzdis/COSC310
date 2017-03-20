@@ -1,8 +1,10 @@
 import {pokedex} from '../pokedex';
-
+import {moves} from '../moves'
 const initialState = {
     pokemon: pokedex,
-    filters: new Set()
+    moves: moves,
+    filters: new Set(),
+    activePokemon: {"POKEMON": 'pikachu'}
 };
 const pokeStore = (state = initialState, action) => {
     switch (action.type) {
@@ -11,14 +13,30 @@ const pokeStore = (state = initialState, action) => {
         case "MYACTION":
             return state;
         case "ADDFILTERS":
-            console.log("filters: ", action.filters);
             let newfilters = new Set();
             state.filters.forEach((filter) => {newfilters.add(filter)});
             action.filters.map((filter) => {newfilters.add(filter)});
             console.log(newfilters, state.filters);
             return {
                 pokemon: state.pokemon,
-                filters: newfilters
+                filters: newfilters,
+                moves: state.moves,
+                activePokemon: state.pokemon
+
+            }
+        case "SELECTPOKEMON":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                moves: state.moves,
+                activePokemon: action.pokemon
+            }
+        case "GETMOVES":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                moves: action.moves,
+                activePokemon: state.activePokemon
             }
     }
 };

@@ -20,7 +20,6 @@ export default class Pokemon extends React.Component {
         this.state = {
             name: "Pikachu",
             type: "Electric",
-            url: "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif",
             top: '132px',
             left:'125%'
         }
@@ -28,27 +27,16 @@ export default class Pokemon extends React.Component {
         // this.updateState = this.updateState.bind(this);
     }
 
-    updateState() {
-
-        if (this.state.url === "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"){
-            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f-5.gif", top:'32px'});
-        }
-        else{
-            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif", top:'132px'});
-        }
-
-    }
-
     render() {
-
         return (
             <div style={{width: '100%'}}>
                 <Paper style={style}>
                     <div style={{height: '192px', width:'192px', left:'100%'}} >
-                        <img  style={{position: 'relative', top: this.state.top, left:this.state.left}} src={this.state.url} onClick={this.updateState.bind(this)}/>
+                        <img  style={{position: 'relative', top: this.state.top, left:this.state.left}}
+                              src={`http://www.pkparaiso.com/imagenes/xy/sprites/animados/${this.props.pokemon.POKEMON.toLowerCase()}.gif`}/>
                     </div>
-                    <h3>{this.state.name}</h3>
-                    <Types type="Electric" />
+                    <h3>{this.props.pokemon.POKEMON}</h3>
+                    <Types type={this.props.pokemon["TYPE 1"] || "Electric"} />
                 </Paper>
                 <HeldItem />
                 <Abilities />

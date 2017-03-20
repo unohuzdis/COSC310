@@ -137,6 +137,20 @@ export default class HiddenPowers extends React.Component {
                 >
                     Dark
                 </Chip>;
+            case 'Fairy' :
+                return <Chip
+                    backgroundColor={'pink'}
+                    style={styles.chip}
+                >
+                   Fairy
+                </Chip>;
+            case 'Normal' :
+                return <Chip
+                    backgroundColor={'grey'}
+                    style={styles.chip}
+                >
+                    Normal
+                </Chip>;
         }
     }
 }
