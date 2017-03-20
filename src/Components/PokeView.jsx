@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
-import LittlePokemon from './LittlePokemon';
+import LittlePokemon from './littlePokemon';
 
 export default class pokeView extends Component{
     constructor(props){

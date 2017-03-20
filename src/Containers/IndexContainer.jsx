@@ -2,10 +2,11 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { myAction, addFilters, selectPokemon, getMoves, , myShiny} from '../Actions/pokeActions';
+import { myAction, addFilters, selectPokemon, getMoves, myShiny} from '../Actions/pokeActions';
 
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
+import ShinyCheck from '../Components/ShinyCheck'
 import request from 'superagent';
 
 const styles = {
@@ -36,11 +37,10 @@ const styles = {
 
 class IndexContainer extends React.Component {
     render() {
-        console.log(this.props.pokemon);
         return (
         <div>
-            <Configure url={this.props.url moves={this.props.moves} pokemon={this.props.activePokemon}/>
-            <ShinyCheck shinyCheck={this.props.myShiny}/>
+            <Configure url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
+            <ShinyCheck shinyCheck={this.props.myShiny} />
             <PokeView selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
@@ -48,11 +48,12 @@ class IndexContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
                     return state.filters.has(pokemon["EGG GROUPS"])
             }) : state.pokemon,
-        url: state.url
+        url: state.url,
         activePokemon: state.activePokemon,
         moves: state.moves
     }
