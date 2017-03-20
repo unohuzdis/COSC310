@@ -1,10 +1,11 @@
 import {pokedex} from '../pokedex';
-
+import {moves} from '../moves'
 const initialState = {
     pokemon: pokedex,
-    filters: new Set()
+    moves: moves,
+    filters: new Set(),
+    activePokemon: {"POKEMON": 'pikachu'}
 };
-const urlPlain = "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif";
 const urlShiny = "http://www.pokestadium.com/sprites/xy/shiny/pikachu-female.gif";
 const pokeStore = (state = initialState, action) => {
     switch (action.type) {
@@ -13,7 +14,6 @@ const pokeStore = (state = initialState, action) => {
         case "MYACTION":
             return state;
         case "ADDFILTERS":
-            console.log("filters: ", action.filters);
             let newfilters = new Set();
             state.filters.forEach((filter) => {newfilters.add(filter)});
             action.filters.map((filter) => {newfilters.add(filter)});
@@ -21,14 +21,35 @@ const pokeStore = (state = initialState, action) => {
             return {
                 pokemon: state.pokemon,
                 filters: newfilters,
+                moves: state.moves,
+                activePokemon: state.pokemon,
                 url: state.url
             }
         case "MYSHINY":
             return {
                 pokemon: state.pokemon,
                 filters: state.filters,
-                url: action.shiny ? urlShiny : urlPlain
+                url: action.shiny ? `http://www.pokestadium.com/sprites/xy/shiny/${state.activePokemon.POKEMON.toLowerCase()}.gif`
+              : `http://www.pkparaiso.com/imagenes/xy/sprites/animados//${state.activePokemon.POKEMON.toLowerCase()}.gif`,
+                moves: state.moves,
+                activePokemon: state.pokemon,
 
+            }
+        case "SELECTPOKEMON":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                url: state.shiny,
+                moves: state.moves,
+                activePokemon: action.pokemon
+            }
+        case "GETMOVES":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                url: state.shiny,
+                moves: action.moves,
+                activePokemon: state.activePokemon
             }
     }
 };
