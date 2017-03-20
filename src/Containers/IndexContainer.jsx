@@ -3,7 +3,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { myAction, addFilters} from '../Actions/pokeActions';
+import { myAction, addFilters, removeFilter} from '../Actions/pokeActions';
 
 
 import Configure from '../Components/Configure';
@@ -41,7 +41,7 @@ const styles = {
         console.log(this.props.pokemon);
         return (
         <div>
-            <Configure />
+            <Configure removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter}/>
             <PokeView addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
@@ -49,11 +49,11 @@ const styles = {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.filters.size);
     return {
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
-                    return state.filters.has(pokemon["EGG GROUPS"])
-            }) : state.pokemon
+                    return state.filters.has(pokemon["EGG GROUPS"].toLowerCase())
+            }) : state.pokemon,
+        filters: state.filters
     }
 };
 
@@ -65,6 +65,14 @@ const mapDispatchToProps = (dispatch) => {
         addFilters: (filters) => {
             console.log(filters["EGG GROUPS"])
             dispatch(addFilters([filters["EGG GROUPS"]]))
+        },
+        addFilter: (filter) => {
+            console.log(filter)
+            dispatch(addFilters([filter]))
+        },
+        removeFilter: (filter) => {
+            console.log(filter, "here");
+            dispatch(removeFilter(filter))
         }
 
     }

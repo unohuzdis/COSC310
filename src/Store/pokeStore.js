@@ -20,6 +20,18 @@ const pokeStore = (state = initialState, action) => {
                 pokemon: state.pokemon,
                 filters: newfilters
             }
+        case "REMOVEFILTERS":
+            let newfilter = new Set();
+            state.filters.forEach((filter) => {
+                console.log(action);
+                if (filter.toLowerCase() != action.filters.toLowerCase()) {
+                    newfilter.add(filter)
+                }
+            });
+            return {
+                pokemon: state.pokemon,
+                filters: newfilter
+            }
     }
 };
 
