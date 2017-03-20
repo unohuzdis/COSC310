@@ -1,13 +1,12 @@
 import {pokedex} from '../pokedex';
 import {moves} from '../moves'
-const initialState = {
+const initialState ={
     pokemon: pokedex,
     moves: moves,
     filters: new Set(),
     activePokemon: {"POKEMON": 'pikachu'},
     url: `http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu.gif`
-
-};
+}
 const pokeStore = (state = initialState, action) => {
     switch (action.type) {
         default:
@@ -50,7 +49,20 @@ const pokeStore = (state = initialState, action) => {
                 filters: state.filters,
                 url: state.url,
                 moves: action.moves,
-                activePokemon: state.activePokemon
+                activePokemon: state.activePokemon,
+                filters: newfilters
+            }
+        case "REMOVEFILTERS":
+            let newfilter = new Set();
+            state.filters.forEach((filter) => {
+                console.log(action);
+                if (filter.toLowerCase() != action.filters.toLowerCase()) {
+                    newfilter.add(filter)
+                }
+            });
+            return {
+                pokemon: state.pokemon,
+                filters: newfilter
             }
     }
 };

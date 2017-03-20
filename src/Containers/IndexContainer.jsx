@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { myAction, addFilters, selectPokemon, getMoves, myShiny} from '../Actions/pokeActions';
 
+
+
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
 import ShinyCheck from '../Components/ShinyCheck'
@@ -36,12 +38,15 @@ const styles = {
 };
 
 class IndexContainer extends React.Component {
+
     render() {
         return (
         <div>
             <Configure url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
             <ShinyCheck shinyCheck={this.props.myShiny} />
             <PokeView selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
+            <Configure removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter}/>
+            <PokeView addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
     }
@@ -55,7 +60,8 @@ const mapStateToProps = (state) => {
             }) : state.pokemon,
         url: state.url,
         activePokemon: state.activePokemon,
-        moves: state.moves
+        moves: state.moves,
+        filters: state.filters
     }
 };
 
@@ -74,22 +80,26 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(selectPokemon(pokemon));
             request.get(`http://pokeapi.co/api/v2/pokemon/${pokemon.DEX}/`)
                 .end((err, res) => {
-                   dispatch(getMoves(res.body.moves.map((move) => {return move.move.name})))
+                    dispatch(getMoves(res.body.moves.map((move) => {
+                        return move.move.name
+                    })))
                 })
-
-
+        },
+        addFilter: (filter) => {
+            console.log(filter)
+            dispatch(addFilters([filter]))
+        },
+        removeFilter: (filter) => {
+            console.log(filter, "here");
+            dispatch(removeFilter(filter))
         }
-
-
-
-
     }
 };
 
 const Index = connect(
     mapStateToProps,
     mapDispatchToProps
-)(IndexContainer);
-
+)
+(IndexContainer);
 export default Index;
 
