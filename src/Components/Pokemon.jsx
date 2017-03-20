@@ -9,7 +9,7 @@ const style = {
     width: "40%",
     textAlign: 'center',
     display: 'inline-block',
-    position: 'relative'
+    position: 'relative',
 };
 
 export default class Pokemon extends React.Component {
@@ -32,8 +32,9 @@ export default class Pokemon extends React.Component {
             <div style={{width: '100%'}}>
                 <Paper style={style}>
                     <div style={{height: '192px', width:'192px', left:'100%'}} >
+
                         <img  style={{position: 'relative', top: this.state.top, left:this.state.left}}
-                              src={`http://www.pkparaiso.com/imagenes/xy/sprites/animados/${this.props.pokemon.POKEMON.toLowerCase()}.gif`}/>
+                              src={this.props.url}/>
                     </div>
                     <h3>{this.props.pokemon.POKEMON}</h3>
                     <Types type={this.props.pokemon["TYPE 1"] || "Electric"} />

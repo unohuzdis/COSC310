@@ -6,6 +6,7 @@ const initialState = {
     filters: new Set(),
     activePokemon: {"POKEMON": 'pikachu'}
 };
+const urlShiny = "http://www.pokestadium.com/sprites/xy/shiny/pikachu-female.gif";
 const pokeStore = (state = initialState, action) => {
     switch (action.type) {
         default:
@@ -21,13 +22,24 @@ const pokeStore = (state = initialState, action) => {
                 pokemon: state.pokemon,
                 filters: newfilters,
                 moves: state.moves,
-                activePokemon: state.pokemon
+                activePokemon: state.pokemon,
+                url: state.url
+            }
+        case "MYSHINY":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                url: action.shiny ? `http://www.pokestadium.com/sprites/xy/shiny/${state.activePokemon.POKEMON.toLowerCase()}.gif`
+              : `http://www.pkparaiso.com/imagenes/xy/sprites/animados//${state.activePokemon.POKEMON.toLowerCase()}.gif`,
+                moves: state.moves,
+                activePokemon: state.pokemon,
 
             }
         case "SELECTPOKEMON":
             return {
                 pokemon: state.pokemon,
                 filters: state.filters,
+                url: state.shiny,
                 moves: state.moves,
                 activePokemon: action.pokemon
             }
@@ -35,6 +47,7 @@ const pokeStore = (state = initialState, action) => {
             return {
                 pokemon: state.pokemon,
                 filters: state.filters,
+                url: state.shiny,
                 moves: action.moves,
                 activePokemon: state.activePokemon
             }

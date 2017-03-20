@@ -7,6 +7,12 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+export const myShiny = (shiny) => {
+    return {
+        type: "MYSHINY",
+        shiny: shiny
+    }
+};
 export const selectPokemon = (pokemon) => {
     return {
         type: "SELECTPOKEMON",

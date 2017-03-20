@@ -28,7 +28,7 @@ export default class Configure extends React.Component {
     render() {
         return(
             <div>
-                <Pokemon pokemon={this.props.pokemon} />
+                <Pokemon  pokemon={this.props.pokemon}  url={this.props.url} />
                 <Tabs>
                     <Tab label="stats" >
                         <Stats stats={this.state} onChange={this.onChange.bind(this)}/>

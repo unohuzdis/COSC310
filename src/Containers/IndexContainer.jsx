@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { myAction, addFilters, selectPokemon, getMoves} from '../Actions/pokeActions';
+import { myAction, addFilters, selectPokemon, getMoves, , myShiny} from '../Actions/pokeActions';
 
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
@@ -39,7 +39,8 @@ class IndexContainer extends React.Component {
         console.log(this.props.pokemon);
         return (
         <div>
-            <Configure moves={this.props.moves} pokemon={this.props.activePokemon}/>
+            <Configure url={this.props.url moves={this.props.moves} pokemon={this.props.activePokemon}/>
+            <ShinyCheck shinyCheck={this.props.myShiny}/>
             <PokeView selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
@@ -51,6 +52,7 @@ const mapStateToProps = (state) => {
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
                     return state.filters.has(pokemon["EGG GROUPS"])
             }) : state.pokemon,
+        url: state.url
         activePokemon: state.activePokemon,
         moves: state.moves
     }
@@ -63,6 +65,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         addFilters: (filters) => {
             dispatch(addFilters([filters["EGG GROUPS"]]))
+        },
+        myShiny: (bool) => {
+            dispatch(myShiny(bool))
         },
         selectPokemon: (pokemon) => {
             dispatch(selectPokemon(pokemon));
