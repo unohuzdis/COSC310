@@ -31,6 +31,7 @@ export default class ShinyCheck extends Component {
     }
     handleChange(e, value){
         this.setState({value});
+        //change the URL
     }
 
     handleCheck(e) {
