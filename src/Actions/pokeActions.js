@@ -7,9 +7,29 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+
 export const removeFilter = (filter) => {
     return {
         type: "REMOVEFILTERS",
         filters: filter
     }
 };
+
+export const myShiny = (shiny) => {
+    return {
+        type: "MYSHINY",
+        shiny: shiny
+    }
+};
+export const selectPokemon = (pokemon) => {
+    return {
+        type: "SELECTPOKEMON",
+        pokemon: pokemon
+    }
+};
+export const getMoves = (moves) => {
+    return {
+        type: "GETMOVES",
+        moves: moves
+    }
+}

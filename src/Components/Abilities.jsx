@@ -18,9 +18,9 @@ export default class Abilities extends Component{
     }
 
     render(){
-        let displayAbilities = abilities.map((ability, item) => {
-            return (<MenuItem key={item}
-                              value={item}
+        let displayAbilities = abilities.map((ability, id) => {
+            return (<MenuItem key={id}
+                              value={id}
                               primaryText={ability}/> )
         })
         return (

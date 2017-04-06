@@ -38,9 +38,11 @@ export default class littlePokemon extends React.Component {
 
 
     render() {
+
         //console.log(this.props.pokemon.POKEMON.toLowerCase());
+
         return (
-            <div onClick={this.props.addFilter.bind(this, this.props.pokemon["EGG GROUPS"])}>
+            <div onClick={this.props.selectPokemon.bind(this, this.props.pokemon)}>
             <Paper style={style} circle={true} >
                 <img className='responsive-img'
                      src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`}/>

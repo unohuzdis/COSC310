@@ -1,13 +1,11 @@
 import React from 'react';
-
-
 import { connect } from 'react-redux';
-
-import { myAction, addFilters, removeFilter} from '../Actions/pokeActions';
-
+import { myAction, addFilters, selectPokemon, getMoves, myShiny, removeFilter} from '../Actions/pokeActions';
 
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
+import ShinyCheck from '../Components/ShinyCheck'
+import request from 'superagent';
 
 const styles = {
     BackgroundStyle: {
@@ -35,25 +33,24 @@ const styles = {
     },
 };
 
- class IndexContainer extends React.Component {
+class IndexContainer extends React.Component {
 
     render() {
-        console.log(this.props.pokemon);
         return (
-        <div>
-            <Configure removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter}/>
-            <PokeView addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
-        </div>
+            <Configure />
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
-                    return state.filters.has(pokemon["EGG GROUPS"].toLowerCase())
+                return state.filters.has(pokemon["EGG GROUPS"])
             }) : state.pokemon,
-        filters: state.filters
+        url: state.url,
+        activePokemon: state.activePokemon,
+        moves: state.moves
     }
 };
 
@@ -63,25 +60,35 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(myAction())
         },
         addFilters: (filters) => {
-            console.log(filters["EGG GROUPS"])
             dispatch(addFilters([filters["EGG GROUPS"]]))
         },
+
         addFilter: (filter) => {
-            console.log(filter)
             dispatch(addFilters([filter]))
         },
         removeFilter: (filter) => {
             console.log(filter, "here");
             dispatch(removeFilter(filter))
+        },
+        myShiny: (bool) => {
+                dispatch(myShiny(bool))
+            },
+        selectPokemon: (pokemon) => {
+                dispatch(selectPokemon(pokemon));
+                request.get(`http://pokeapi.co/api/v2/pokemon/${pokemon.DEX}/`)
+                    .end((err, res) => {
+                        dispatch(getMoves(res.body.moves.map((move) => {
+                            return move.move.name
+                        })))
+                    })
         }
-
     }
 };
 
 const Index = connect(
     mapStateToProps,
     mapDispatchToProps
-)
-(IndexContainer);
+)(IndexContainer);
+
 export default Index;
 

@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
-import LittlePokemon from './LittlePokemon';
+import LittlePokemon from './littlePokemon';
 
 export default class pokeView extends Component{
     constructor(props){
@@ -12,10 +12,12 @@ export default class pokeView extends Component{
     }
 
     render(){
+
         //console.log(this);
+
         let displayPokemons = this.props.pokemon.map((pokemon, id) => {
             return (
-                <LittlePokemon addFilter={this.props.addFilter.bind(this, pokemon)} key={id} pokemon={pokemon} />)
+                <LittlePokemon selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilter.bind(this, pokemon)} key={id} pokemon={pokemon} />)
         });
 
         return (

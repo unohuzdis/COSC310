@@ -17,8 +17,9 @@ class App extends React.Component {
                 <Provider store={store}>
                     <IndexContainer />
                 </Provider>
-            </MuiThemeProvider>);
+        </MuiThemeProvider>);
     }
 }
 
 ReactDOM.render(<App/>, document.getElementById('app'));
+

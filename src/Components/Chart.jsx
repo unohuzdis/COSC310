@@ -38,7 +38,6 @@ export default class Chart extends React.Component {
             SPDEF	${(this.calculateStat(pikachu.spdef, this.props.stats.spdef))}
             SPD	${(this.calculateStat(pikachu.atk, this.props.stats.spd ))}`;
         let generalChartData = tsvParse(letterData);
-        let colorScale = d3.scale.category20();
         let width = 500,
             height = 350,
             title = 'Bar Chart',
@@ -57,22 +56,24 @@ export default class Chart extends React.Component {
             yTicks = [20, ''],
             margins = {bottom: 20};
         return (
-                <BarChart
-                    showLegend={false}
-                    title= {title}
-                    data= {generalChartData}
-                    width= {width}
-                    height= {height}
-                    chartSeries = {chartSeries}
-                    yDomain={[0, 200]}
-                    x= {x}
-                    colorScale={colorScale}
-                    xLabel= {xLabel}
-                    xScale= {xScale}
-                    yTicks= {yTicks}
-                    yLabel = {yLabel}
-                />
-
+                <div style={this.props.style}>
+                    <BarChart
+                        colorByLabel={false}
+                        trandform={'90deg'}
+                        showLegend={false}
+                        title= {title}
+                        data= {generalChartData}
+                        width= {width}
+                        height= {height}
+                        chartSeries = {chartSeries}
+                        yDomain={[0, 200]}
+                        x= {x}
+                        xLabel= {xLabel}
+                        xScale= {xScale}
+                        yTicks= {yTicks}
+                        yLabel = {yLabel}
+                    />
+                </div>
         )
     }
 }
