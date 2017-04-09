@@ -20,8 +20,8 @@ export default class Pokemon extends React.Component {
         this.state = {
             name: "Pikachu",
             type: "Electric",
-            top: '132px',
-            left:'125%'
+            // top: '132px',
+            // left:'125%'
         }
 
         // this.updateState = this.updateState.bind(this);
@@ -33,7 +33,7 @@ export default class Pokemon extends React.Component {
             <div style={{width: '100%'}}>
                 <Paper style={style}>
                     <div style={{height: '192px', width:'192px', left:'100%'}} >
-                        <img  style={{position: 'relative', top: this.state.top, left:this.state.left}} src={this.props.url}/>
+                        <img  style={{height:'100px', width:'100px', position:'absolute', left:'45%', right:'50%'}} src={this.props.url}/>
                     </div>
                     <h3>{this.props.pokemon.POKEMON || ""}</h3>
                     <Types type={this.props.pokemon["TYPE 1"] || "Electric"} />
