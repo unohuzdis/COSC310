@@ -2,7 +2,7 @@ import React from 'react';
 import {BarChart} from 'react-d3-basic'
 import d3 from 'd3';
 import moment from 'moment';
-import Paper from 'material-ui';
+import '../Styles/responsive.css'
 
 import {
     tsvParse
@@ -38,8 +38,8 @@ export default class Chart extends React.Component {
             SPDEF	${(this.calculateStat(pikachu.spdef, this.props.stats.spdef))}
             SPD	${(this.calculateStat(pikachu.atk, this.props.stats.spd ))}`;
         let generalChartData = tsvParse(letterData);
-        let width = 500,
-            height = 350,
+        let width = 450,
+            height = 300,
             title = 'Bar Chart',
             chartSeries = [
                 {
@@ -57,7 +57,7 @@ export default class Chart extends React.Component {
             margins = {bottom: 20};
         return (
                 <div style={this.props.style}>
-                    <BarChart
+                    <BarChart className='half'
                         colorByLabel={false}
                         trandform={'90deg'}
                         showLegend={false}
