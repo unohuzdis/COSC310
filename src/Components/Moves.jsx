@@ -8,7 +8,6 @@ export default class Stats extends React.Component {
         super(props);
     }
     render() {
-        console.log(this.props.moves)
         return (
             <div>
                 <AutoComplete

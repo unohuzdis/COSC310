@@ -7,6 +7,14 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+
+export const removeFilter = (filter) => {
+    return {
+        type: "REMOVEFILTERS",
+        filters: filter
+    }
+};
+
 export const myShiny = (shiny) => {
     return {
         type: "MYSHINY",
@@ -25,9 +33,9 @@ export const getMoves = (moves) => {
         moves: moves
     }
 }
-export const removeFilter = (filter) => {
+export const nameFilter = (name) => {
     return {
-        type: "REMOVEFILTERS",
-        filters: filter
+        type: "SORTBYNAME",
+        nameString: name
     }
-};
+}

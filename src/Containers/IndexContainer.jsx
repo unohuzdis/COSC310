@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-import { myAction, addFilters, selectPokemon, getMoves, myShiny, removeFilter} from '../Actions/pokeActions';
+import { myAction, addFilters, selectPokemon, getMoves, myShiny, removeFilter, nameFilter} from '../Actions/pokeActions';
 
 
 
@@ -56,18 +56,27 @@ class IndexContainer extends React.Component {
         return (
         <div style={{backgroundColor:'#dbdbdb'}}>
             <div style={styles.Alex}> <ShinyCheck shinyCheck={this.props.myShiny} /></div>
-            <Configure filters={this.props.filters} addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
-            <PokeView selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
+            <Configure filterName={this.props.filterByName} steps={this.props.activePokemon["HATCH STEPS"]} pokedex={this.props.pokedex} filters={this.props.filters}  addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
+            <PokeView  selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
-        pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
-                    return state.filters.has(pokemon["EGG GROUPS"])
-            }) : state.pokemon,
+        pokedex:
+            (state.filters.size > 0 ?
+                state.pokemon.filter((pokemon) => {
+                return (pokemon["POKEMON"].toLowerCase().match(state.nameString) != null)
+            }).filter((pokemon, id) => {
+                    return state.filters.has(pokemon["EG 1"].toLowerCase())
+            })
+            :
+                state.pokemon.filter((pokemon) => {
+                    return (pokemon["POKEMON"].toLowerCase().match(state.nameString) != null)
+                })),
         url: state.url,
         activePokemon: state.activePokemon,
         moves: state.moves,
@@ -84,7 +93,15 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addFilters([filters["EGG GROUPS"]]))
         },
         myShiny: (bool) => {
-            dispatch(myShiny(bool))
+        dispatch(myShiny(bool))
+        },
+        addFilter: (filter) => {
+            dispatch(addFilters([filter]))
+        },
+        removeFilter: (filter) => {
+            console.log(filter, "here");
+            dispatch(removeFilter(filter))
+
         },
         selectPokemon: (pokemon) => {
             dispatch(selectPokemon(pokemon));
@@ -99,8 +116,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addFilters([filter]))
         },
         removeFilter: (filter) => {
-            console.log('here');
             dispatch(removeFilter(filter))
+        },
+        filterByName: (name) => {
+            dispatch(nameFilter(name))
         }
     }
 };
@@ -108,7 +127,7 @@ const mapDispatchToProps = (dispatch) => {
 const Index = connect(
     mapStateToProps,
     mapDispatchToProps
-)
-(IndexContainer);
+)(IndexContainer);
+
 export default Index;
 

@@ -4,14 +4,13 @@ import HeldItem from './HeldItem';
 import Types from './Types';
 import Abilities from './Abilities'
 import '../Styles/responsive.css'
-
 const style = {
     left: '37%',
     height: 'auto',
     width: "25%",
     textAlign: 'center',
     display: 'inline-block',
-    position: 'relative',
+    position: 'relative'
 };
 
 
@@ -23,15 +22,26 @@ export default class Pokemon extends React.Component {
         this.state = {
             name: "Pikachu",
             type: "Electric",
-            // top: '132px',
-            // left:'125%'
+            url: "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif",
+            top: '132px',
+            left:'125%'
         }
 
         // this.updateState = this.updateState.bind(this);
     }
 
+    updateState() {
+
+        if (this.state.url === "http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif"){
+            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f-5.gif", top:'32px'});
+        }
+        else{
+            this.setState({url:"http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu-f.gif", top:'132px'});
+        }
+
+    }
+
     render() {
-        console.log("POKEMON:" , this);
         return (
             <div style={{width: '100%'}} className="space">
                 <Paper style={style}>

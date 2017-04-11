@@ -21,11 +21,12 @@ export default class SortedEggGroups extends Component{
         if (eggType.includes(value)){
             this.props.addFilter(value);
         }
-    };
-
-
-
-
+    }
+    nameFilter(event){
+        if (event.keyCode == 13){
+            this.props.filterName(event.target.value);
+        }
+    }
 
     render() {
         return (
@@ -36,6 +37,7 @@ export default class SortedEggGroups extends Component{
                     onUpdateInput={this.handleUpdateInput.bind(this)}
                     floatingLabelText="Egg Group Filter"
                     fullWidth={true}
+                    onKeyDown={this.nameFilter.bind(this)}
                 />
                 <Group removeFilter={this.props.removeFilter} filters={this.props.filters} />
             </div>
