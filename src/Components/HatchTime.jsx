@@ -4,15 +4,40 @@
 import React from 'react';
 
 
+let NumberOfSteps=[1280, 2560,3840,5120,6400,7680,8960,10240,20480,30720];
 // check what pokemon is selected
 export default class HatchTime extends React.Components{
 
     constructor(props){
         super(props);
-
         this.state = {
+            value: 1
+        };
+    }
 
+    handleUpdateInput(value) {
+        if (NumberOfSteps.includes(value)){
+            console.log(this);
+            this.props.display(value);
         }
+    };
+
+    render(){
+
+        return (
+            <div>
+                <AutoComplete
+                    hintText="Type anything"
+                    dataSource={eggType}
+                    onUpdateInput={this.handleUpdateInput.bind(this)}
+                    floatingLabelText="Egg Group Filter"
+                    fullWidth={true}
+                />
+                <Group removeFilter={this.props.removeFilter} filters={this.props.filters} />
+            </div>
+
+        );
+
     }
 
 }
