@@ -13,6 +13,14 @@ export default class Stats extends React.Component {
     }
 
     render() {
+        const totalStats = {
+            hp: 0,
+            atk: 0,
+            def: 0,
+            spatk: 0,
+            spdef: 0,
+            spd: 0,
+        }
         return (
             <div>
                 <Paper style={{display: 'inline-block', float: 'left' ,width: '50%',height: '40%', position:'relative'}}>
@@ -24,7 +32,7 @@ export default class Stats extends React.Component {
                         <Stat id='spd' value={this.props.stats.spd} onChange={this.props.onChange}/>
                 </Paper>
                 <Paper style={{display: 'inline-block', float: 'left' ,height: '40%', width: '50%', position:'relative'}}>
-                    <Chart stats={this.props.stats} style={{display: 'block',textAlign:'center', width: '100%', position:'relative'}}/>
+                    <Chart base={this.props.base} stats={this.props.stats} style={{display: 'block',textAlign:'center', width: '100%', position:'relative'}}/>
                 </Paper>
                 <HiddenPower stats={this.props.stats}/>
 

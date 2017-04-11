@@ -43,7 +43,7 @@ class IndexContainer extends React.Component {
         console.log(this);
         return (
         <div>
-            <Configure filters={this.props.filters} addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
+            <Configure pokedex={this.props.pokedex} filters={this.props.filters}  addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
             <ShinyCheck shinyCheck={this.props.myShiny} />
             <PokeView selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
@@ -54,7 +54,7 @@ class IndexContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
-                    return state.filters.has(pokemon["EGG GROUPS"])
+                    return state.filters.has(pokemon["EG 1"].toLowerCase())
             }) : state.pokemon,
         url: state.url,
         activePokemon: state.activePokemon,
@@ -87,7 +87,6 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addFilters([filter]))
         },
         removeFilter: (filter) => {
-            console.log('here');
             dispatch(removeFilter(filter))
         }
     }
