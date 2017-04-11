@@ -11,15 +11,19 @@ const styles = {
     checkbox: {
         marginBottom: 16,
         width: 100,
+        marginLeft:150,
     },
     paper: {
-        width: 650,
+        width: 400,
         height: 100,
-        zIndex: 1,
+        zIndex: 4,
+        position: 'absolute',
+
 
     },
     selectField: {
-        width: 650,
+        width: 400,
+        overflow:'auto',
 
     }
 };

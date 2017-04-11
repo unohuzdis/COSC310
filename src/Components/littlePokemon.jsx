@@ -10,6 +10,7 @@ const style = {
     textAlign: 'center',
     float: 'left',
     display: 'inline-block'
+
 };
 
 
@@ -39,7 +40,7 @@ export default class littlePokemon extends React.Component {
 
     render() {
         return (
-            <div onClick={this.props.selectPokemon.bind(this, this.props.pokemon)}>
+            <div style={{backgroundColor:'#dbdbdb'}} onClick={this.props.selectPokemon.bind(this, this.props.pokemon)}>
             <Paper style={style} circle={true} >
                 <img className='responsive-img'
                      src={`https://img.pokemondb.net/artwork/${this.props.pokemon.POKEMON.toLowerCase()}.jpg`}/>

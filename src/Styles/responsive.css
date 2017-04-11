@@ -66,6 +66,22 @@ body {
     margin-bottom: -10px;
 }
 
+.space{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.align{
+    display: inline-block;
+    position: absolute;
+    float: left;
+}
+
+.alignheld{
+    position:relative;
+    float:right;
+}
+
 h5{
     font-size: 9px;
 }

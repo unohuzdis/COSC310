@@ -12,7 +12,6 @@ export default class Abilities extends Component{
     }
 
 
-
     handleChange(event, value){
         this.setState({value: value});
     }
