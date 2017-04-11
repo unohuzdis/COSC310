@@ -45,6 +45,7 @@ class IndexContainer extends React.Component {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
+        steps: 12,
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
                 return state.filters.has(pokemon["EGG GROUPS"])
             }) : state.pokemon,
