@@ -24,9 +24,6 @@ export default class SortedEggGroups extends Component{
     };
 
 
-
-
-
     render() {
         return (
             <div>
