@@ -24,9 +24,10 @@ export default class HatchTime extends React.Components{
     render(){
 
         return(
-        <dev>
-            {this.props.value}
-            </dev>
+        <div>
+            <p>The number of steps to hatch the egg is {this.props.value}</p><br/>
+            <p>The number of steps with either "Flame Body" or "Magma Armor" reduces to {(this.props.value)/2}</p>
+            </div>
         );
     }
 
