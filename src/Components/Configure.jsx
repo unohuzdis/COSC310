@@ -5,6 +5,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import Moves from './Moves';
 import SortedEggGroups from './SortedEggGroups';
 import Abilities from './Abilities';
+import HatchTime from './HatchTime';
 
 
 let style = {width: '40%'}
@@ -43,6 +44,9 @@ export default class Configure extends React.Component {
                     </Tab>
                     <Tab label="moves" >
                        <Moves moves={this.props.moves}/>
+                    </Tab>
+                    <Tab label="steps" >
+                        <HatchTime steps={this.props.steps}/>
                     </Tab>
                 </Tabs>
 

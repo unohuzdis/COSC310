@@ -37,7 +37,7 @@ class IndexContainer extends React.Component {
 
     render() {
         return (
-            <Configure />
+            <Configure steps={this.props.steps}/>
         )
     }
 }
