@@ -4,8 +4,10 @@ import Stats from './Stats';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Moves from './Moves';
 import SortedEggGroups from './SortedEggGroups';
-import Want from './Want';
 import Abilities from './Abilities'
+import HeldItem from './HeldItem'
+import '../Styles/responsive.css'
+import Want from './Want';
 import HatchTime from './HatchTime';
 
 
@@ -41,7 +43,7 @@ export default class Configure extends React.Component {
 
         }
         return(
-            <div>
+            <div style={{backgroundColor:'#dbdbdb'}}>
                 <Pokemon  pokemon={this.props.pokemon}  url={this.props.url} />
                 <Tabs>
                     <Tab label="stats" >
@@ -54,6 +56,8 @@ export default class Configure extends React.Component {
                         <HatchTime steps={this.props.steps} />
                     </Tab>
                 </Tabs>
+                <div style={{float:'left', marginRight:'2em'}}><Abilities /></div>
+                <HeldItem />
                 <SortedEggGroups filterName={this.props.filterName} removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
                 <Want selected={this.props.pokemon} pokedex={this.props.pokedex} />
             </div>

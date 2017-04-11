@@ -15,6 +15,7 @@ const styles = {
         margin: 4,
         display: 'inline-block',
         fontColor: '#ffffff',
+        fontSize: 20
     },
     wrapper: {
         display: 'flex',
@@ -65,6 +66,7 @@ export default class HiddenPowers extends React.Component {
             case 1 :
                 return <Chip
                     backgroundColor={'#00BFFF'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Flying
@@ -72,13 +74,16 @@ export default class HiddenPowers extends React.Component {
             case 2 :
                 return <Chip
                     backgroundColor={'#8B008B'}
-                    style={styles.chip}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                 >
                     Poison
                 </Chip>;
             case 3 :
                 return <Chip
                     backgroundColor={'#B8860B'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Ground
@@ -86,6 +91,8 @@ export default class HiddenPowers extends React.Component {
             case 4 :
                 return <Chip
                     backgroundColor={'#696969'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Rock
@@ -93,6 +100,7 @@ export default class HiddenPowers extends React.Component {
             case 5 :
                 return <Chip
                     backgroundColor={'#7FFF00'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Bug
@@ -100,6 +108,8 @@ export default class HiddenPowers extends React.Component {
             case 6 :
                 return <Chip
                     backgroundColor={'#4B0082'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Ghost
@@ -107,6 +117,7 @@ export default class HiddenPowers extends React.Component {
             case 7 :
                 return <Chip
                     backgroundColor={'#D3D3D3'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Steel
@@ -121,6 +132,7 @@ export default class HiddenPowers extends React.Component {
             case 9 :
                 return <Chip
                     backgroundColor={'#B0E0E6'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Water
@@ -128,6 +140,7 @@ export default class HiddenPowers extends React.Component {
             case 10 :
                 return <Chip
                     backgroundColor={'	#228B22'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Grass
@@ -135,6 +148,7 @@ export default class HiddenPowers extends React.Component {
             case 11 :
                 return <Chip
                     backgroundColor={'#FFFF00'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Electric
@@ -142,6 +156,8 @@ export default class HiddenPowers extends React.Component {
             case 12 :
                 return <Chip
                     backgroundColor={'#FF00FF'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Psychic
@@ -149,6 +165,7 @@ export default class HiddenPowers extends React.Component {
             case 13 :
                 return <Chip
                     backgroundColor={'#E0FFFF'}
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Ice
@@ -156,6 +173,8 @@ export default class HiddenPowers extends React.Component {
             case 14:
                 return <Chip
                     backgroundColor={'#4B0082'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Dragon
@@ -163,6 +182,8 @@ export default class HiddenPowers extends React.Component {
             case 15 :
                 return <Chip
                     backgroundColor={'#191970'}
+                    labelColor='#ffffff'
+                    labelStyle={styles.labelStyle}
                     style={styles.chip}
                 >
                     Dark

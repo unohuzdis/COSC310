@@ -21,6 +21,18 @@ const styles = {
         position: 'absolute',
         zIndex: 0
     },
+
+    Alex:{
+        marginLeft:'50px',
+        marginTop:'50px',
+        position:'absolute',
+        zIndex:2,
+        display:'block',
+
+
+
+    },
+
     NavbarStyle: {
         width: '99%',
         height: '10%',
@@ -42,9 +54,9 @@ class IndexContainer extends React.Component {
     render() {
         console.log(this);
         return (
-        <div>
+        <div style={{backgroundColor:'#dbdbdb'}}>
+            <div style={styles.Alex}> <ShinyCheck shinyCheck={this.props.myShiny} /></div>
             <Configure filterName={this.props.filterByName} steps={this.props.activePokemon["HATCH STEPS"]} pokedex={this.props.pokedex} filters={this.props.filters}  addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
-            <ShinyCheck shinyCheck={this.props.myShiny} />
             <PokeView  selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
         </div>
         )
