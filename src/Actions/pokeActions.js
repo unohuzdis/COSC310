@@ -7,6 +7,14 @@ export const addFilters = (filters) => {
         filters: filters
     }
 };
+
+export const removeFilter = (filter) => {
+    return {
+        type: "REMOVEFILTERS",
+        filters: filter
+    }
+};
+
 export const myShiny = (shiny) => {
     return {
         type: "MYSHINY",

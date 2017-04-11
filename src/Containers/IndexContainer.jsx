@@ -52,10 +52,11 @@ class IndexContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
         steps: 12,
         pokedex: state.filters.size > 0 ? state.pokemon.filter((pokemon, id) => {
-                    return state.filters.has(pokemon["EGG GROUPS"])
+                return state.filters.has(pokemon["EGG GROUPS"])
             }) : state.pokemon,
         url: state.url,
         activePokemon: state.activePokemon,
@@ -73,7 +74,15 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addFilters([filters["EGG GROUPS"]]))
         },
         myShiny: (bool) => {
-            dispatch(myShiny(bool))
+        dispatch(myShiny(bool))
+        },
+        addFilter: (filter) => {
+            dispatch(addFilters([filter]))
+        },
+        removeFilter: (filter) => {
+            console.log(filter, "here");
+            dispatch(removeFilter(filter))
+
         },
         selectPokemon: (pokemon) => {
             dispatch(selectPokemon(pokemon));
@@ -88,8 +97,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(addFilters([filter]))
         },
         removeFilter: (filter) => {
-            console.log('here');
-            dispatch(removeFilter(filter))
+        console.log('here');
+        dispatch(removeFilter(filter))
         }
     }
 };
@@ -97,7 +106,7 @@ const mapDispatchToProps = (dispatch) => {
 const Index = connect(
     mapStateToProps,
     mapDispatchToProps
-)
-(IndexContainer);
+)(IndexContainer);
+
 export default Index;
 
