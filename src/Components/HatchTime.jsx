@@ -11,12 +11,7 @@ export default class HatchTime extends React.Components{
             value: 1
         };
     }
-    handleUpdateInput(value) {
-        if (NumberOfSteps.includes(value)){
-            console.log(this);
-            this.props.display(value);
-        }
-    };
+
     handleChange(event, value){
         this.setState({value: value});
     }
