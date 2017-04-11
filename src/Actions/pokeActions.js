@@ -33,3 +33,9 @@ export const getMoves = (moves) => {
         moves: moves
     }
 }
+export const nameFilter = (name) => {
+    return {
+        type: "SORTBYNAME",
+        nameString: name
+    }
+}

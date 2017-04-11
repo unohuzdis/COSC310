@@ -54,7 +54,7 @@ export default class Configure extends React.Component {
                         <HatchTime steps={this.props.steps} />
                     </Tab>
                 </Tabs>
-                <SortedEggGroups removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
+                <SortedEggGroups filterName={this.props.filterName} removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
                 <Want selected={this.props.pokemon} pokedex={this.props.pokedex} />
             </div>
         )

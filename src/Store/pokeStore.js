@@ -44,7 +44,8 @@ const pokeStore = (state = initialState, action) => {
                 filters: newfilters,
                 moves: state.moves,
                 activePokemon: state.pokemon,
-                url: state.url
+                url: state.url,
+                nameString: state.nameString
             }
         case "REMOVEFILTERS":
             let newfilter = new Set();
@@ -59,7 +60,9 @@ const pokeStore = (state = initialState, action) => {
                 filters: newfilter,
                 moves: state.moves,
                 activePokemon: state.pokemon,
-                url: state.url
+                url: state.url,
+                nameString: state.nameString
+
             }
         case "MYSHINY":
             return {
@@ -69,7 +72,7 @@ const pokeStore = (state = initialState, action) => {
               : `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${state.activePokemon.POKEMON.toLowerCase()}.gif`,
                 moves: state.moves,
                 activePokemon: state.pokemon,
-
+                nameString: state.nameString
             }
         case "SELECTPOKEMON":
             return {
@@ -77,7 +80,8 @@ const pokeStore = (state = initialState, action) => {
                 filters: state.filters,
                 url: `http://www.pkparaiso.com/imagenes/xy/sprites/animados/${action.pokemon.POKEMON.toLowerCase()}.gif`,
                 moves: state.moves,
-                activePokemon: action.pokemon
+                activePokemon: action.pokemon,
+                nameString: state.nameString
             }
         case "GETMOVES":
             return {
@@ -86,7 +90,18 @@ const pokeStore = (state = initialState, action) => {
                 url: state.url,
                 moves: action.moves,
                 activePokemon: state.activePokemon,
-                filters: state.filters
+                filters: state.filters,
+                nameString: state.nameString
+            }
+        case "SORTBYNAME":
+            return {
+                pokemon: state.pokemon,
+                filters: state.filters,
+                url: state.url,
+                moves: state.moves,
+                activePokemon: state.activePokemon,
+                filters: state.filters,
+                nameString: action.nameString
             }
     }
 };
