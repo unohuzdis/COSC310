@@ -4,7 +4,25 @@ const initialState ={
     pokemon: pokedex,
     moves: moves,
     filters: new Set(),
-    activePokemon: {"POKEMON": 'pikachu'},
+    activePokemon: {
+        "DEX": 25,
+        "POKEMON": "Pikachu",
+        "TYPE 1": "Electric",
+        "TYPE 2": "",
+        "ABILITIES 1": "Static",
+        "ABILITIES 2": "",
+        "HIDDEN ABILITY": "Lightningrod",
+        "EG 1": "Field",
+        "EG 2": "Fairy",
+        "HEALTH POINTS": 35,
+        "ATTACK": 55,
+        "DEFENSE": 40,
+        "SPECIAL ATTACK": 50,
+        "SPECIAL DEFENSE": 50,
+        "SPEED": 90,
+        "TOTAL": 320,
+        "HATCH STEPS": 5120
+    },
     url: `http://www.pkparaiso.com/imagenes/xy/sprites/animados/pikachu.gif`
 }
 

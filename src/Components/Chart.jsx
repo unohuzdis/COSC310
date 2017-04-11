@@ -31,12 +31,12 @@ export default class Chart extends React.Component {
     render() {
         let letterData =
             `letter	frequency
-            HP	${(this.calculateStat(pikachu.hp, this.props.stats.hp) + 50 + 5)} 
-            ATK	${(this.calculateStat(pikachu.atk, this.props.stats.atk))}
-            DEF	${(this.calculateStat(pikachu.def, this.props.stats.def))}
-            SPATK	${(this.calculateStat(pikachu.spatk, this.props.stats.spatk))}
-            SPDEF	${(this.calculateStat(pikachu.spdef, this.props.stats.spdef))}
-            SPD	${(this.calculateStat(pikachu.atk, this.props.stats.spd ))}`;
+            HP	${(this.calculateStat(this.props.base.hp, this.props.stats.hp) + 50 + 5)} 
+            ATK	${(this.calculateStat(this.props.base.atk, this.props.stats.atk))}
+            DEF	${(this.calculateStat(this.props.base.def, this.props.stats.def))}
+            SPATK	${(this.calculateStat(this.props.base.spatk, this.props.stats.spatk))}
+            SPDEF	${(this.calculateStat(this.props.base.spdef, this.props.stats.spdef))}
+            SPD	${(this.calculateStat(this.props.base.atk, this.props.stats.spd ))}`;
         let generalChartData = tsvParse(letterData);
         let width = 500,
             height = 350,

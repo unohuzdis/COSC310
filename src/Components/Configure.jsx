@@ -4,7 +4,8 @@ import Stats from './Stats';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Moves from './Moves';
 import SortedEggGroups from './SortedEggGroups';
-import Abilities from './Abilities';
+import Want from './Want';
+import Abilities from './Abilities'
 import HatchTime from './HatchTime';
 
 
@@ -30,12 +31,21 @@ export default class Configure extends React.Component {
 
     }
     render() {
+        const stats = {
+            hp: this.props.pokemon["HEALTH POINTS"],
+            atk: this.props.pokemon["ATTACK"],
+            def: this.props.pokemon["DEFENSE"],
+            spatk: this.props.pokemon["SPECIAL ATTACK"],
+            spdef: this.props.pokemon["SPECIAL DEFENSE"],
+            spd: this.props.pokemon["SPEED"],
+
+        }
         return(
             <div>
                 <Pokemon  pokemon={this.props.pokemon}  url={this.props.url} />
                 <Tabs>
                     <Tab label="stats" >
-                        <Stats stats={this.state} onChange={this.onChange.bind(this)}/>
+                        <Stats base={stats} stats={this.state} onChange={this.onChange.bind(this)}/>
                     </Tab>
                     <Tab label="moves" >
                        <Moves moves={this.props.moves}/>
@@ -45,7 +55,7 @@ export default class Configure extends React.Component {
                     </Tab>
                 </Tabs>
                 <SortedEggGroups removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
-                <Abilities />
+                <Want selected={this.props.pokemon} pokedex={this.props.pokedex} />
             </div>
         )
     }

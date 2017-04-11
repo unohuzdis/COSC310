@@ -23,10 +23,8 @@ class Group extends React.Component{
     }
     render() {
         const filters = Array.from(this.props.filters).map((filter, id) => {
-            console.log(this);
-            return (<Chip style={chipStyle} key={id} onClick={this.props.removeFilter.bind(this, filter)}> {filter} </Chip>);
+            return (<Chip style={chipStyle} key={id} onClick={this.props.removeFilter.bind(this, filter)}> {filter} </Chip>)
         });
-        console.log(filters);
         return(
             <Paper style={style} zDepth={1} rounded={true} >
                 {filters}
