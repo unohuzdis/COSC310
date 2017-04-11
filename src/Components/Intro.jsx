@@ -8,23 +8,34 @@ const style1 = {
     width: 'auto',
     textAlign: 'center',
     display: 'inline-block',
-    position: 'relative',
+    position: 'absolute',
+    zIndex: 5
 };
+
+const displayOff = {
+    display: 'none'
+}
 
 const style2 = {
     margin: 12,
     float: 'left',
 };
+let isOn = true;
 
 
 export default class Intro extends React.Component {
 
+    handleClick(){
+        this.isOn = false;
+        render();
+    }
 
     render(){
+        if(isOn == true){
         return (
-            <div style={{width: '100%'}}>
+            <div style={{width: 'auto'}}>
                 <Paper style={style1} zDepth={5}>
-                    <div style={{height: '192px', width:'192px', }} >
+                    <div style={{height: 'auto', width:'auto', }} >
 
                         <h2>Welcome to Hatchr! </h2>
                         <p> This program is designed to guide you through the complex process of Pokemon breeding. <br/>
@@ -42,11 +53,16 @@ export default class Intro extends React.Component {
 
 
                     </div>
-                    <RaisedButton label="Default" primary={true} style={style} />
+                    <RaisedButton label="Continue" primary={true} style={style} onClick={this.handleClick} />
                 </Paper>
 
             </div>
-        )
+        )}
+        else{
+            return(null)
+        }
 
     }
+
+
 }
