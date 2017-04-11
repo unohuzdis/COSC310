@@ -4,6 +4,9 @@
 import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import Index from '../Containers/IndexContainer';
+
+
 let abilities = ["Static", "Lightning Rod"];
 export default class Abilities extends Component{
     constructor(props){
