@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-export default class HatchTime extends React.Components{
+export default class HatchTime extends React.Component{
 
     constructor(props){
         super(props);
@@ -11,25 +11,17 @@ export default class HatchTime extends React.Components{
             value: 1
         };
     }
-    handleUpdateInput(value) {
-        if (NumberOfSteps.includes(value)){
-            console.log(this);
-            this.props.display(value);
-        }
-    };
     handleChange(event, value){
         this.setState({value: value});
     }
-
     render(){
         return(
         <div>
-            <p>The number of steps to hatch the egg is {this.props.value}</p><br/>
-            <p>The number of steps with either "Flame Body" or "Magma Armor" reduces to {(this.props.value)/2}</p>
-            </div>
+            <p>The number of steps to hatch the egg is {this.props.steps}</p><br/>
+            <p>The number of steps with either "Flame Body" or "Magma Armor" reduces to {(this.props.steps)/2}</p>
+        </div>
         );
     }
-
 }
 
 

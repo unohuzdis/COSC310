@@ -56,7 +56,7 @@ const pokeStore = (state = initialState, action) => {
             });
             return {
                 pokemon: state.pokemon,
-                filters: newfilters,
+                filters: newfilter,
                 moves: state.moves,
                 activePokemon: state.pokemon,
                 url: state.url
@@ -87,22 +87,6 @@ const pokeStore = (state = initialState, action) => {
                 moves: action.moves,
                 activePokemon: state.activePokemon,
                 filters: state.filters
-            }
-        case "REMOVEFILTERS":
-            let newfilter = new Set();
-            state.filters.forEach((filter) => {
-                console.log(action);
-                if (filter.toLowerCase() != action.filters.toLowerCase()) {
-                    newfilter.add(filter)
-                }
-            });
-            return {
-                pokemon: state.pokemon,
-                filters: state.filters,
-                url: state.url,
-                moves: state.moves,
-                activePokemon: state.activePokemon,
-                filters: newfilter
             }
     }
 };

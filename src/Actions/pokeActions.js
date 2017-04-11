@@ -33,9 +33,3 @@ export const getMoves = (moves) => {
         moves: moves
     }
 }
-export const removeFilter = (filter) => {
-    return {
-        type: "REMOVEFILTERS",
-        filters: filter
-    }
-};
