@@ -1,13 +1,12 @@
 import React from 'react';
 import Pokemon from './Pokemon';
-import Stats from './Stats'
+import Stats from './Stats';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Moves from './Moves';
 import SortedEggGroups from './SortedEggGroups';
 import Want from './Want';
-
-
 import Abilities from './Abilities'
+import HatchTime from './HatchTime';
 
 
 let style = {width: '40%'}
@@ -24,7 +23,8 @@ export default class Configure extends React.Component {
             spdef: 0,
             spd: 0,
         }
-    } onChange(name, value){
+    }
+    onChange(name, value){
         let newState = {};
         newState[name] = value;
         this.setState(newState);
@@ -49,6 +49,9 @@ export default class Configure extends React.Component {
                     </Tab>
                     <Tab label="moves" >
                        <Moves moves={this.props.moves}/>
+                    </Tab>
+                    <Tab label="steps" >
+                        <HatchTime steps={this.props.steps}/>
                     </Tab>
                 </Tabs>
                 <SortedEggGroups removeFilter={this.props.removeFilter} filters={this.props.filters} addFilter={this.props.addFilter} /><br/>
