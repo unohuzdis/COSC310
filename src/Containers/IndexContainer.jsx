@@ -4,12 +4,12 @@ import { connect } from 'react-redux';
 
 import { myAction, addFilters, selectPokemon, getMoves, myShiny, removeFilter, nameFilter} from '../Actions/pokeActions';
 
-
-
 import Configure from '../Components/Configure';
 import PokeView from '../Components/PokeView';
 import ShinyCheck from '../Components/ShinyCheck'
 import request from 'superagent';
+import ShinyCheck from '../Components/ShinyCheck';
+import Intro from '../Components/Intro';
 
 const styles = {
     BackgroundStyle: {
@@ -55,6 +55,7 @@ class IndexContainer extends React.Component {
         console.log(this);
         return (
         <div style={{backgroundColor:'#dbdbdb'}}>
+            <Intro />
             <div style={styles.Alex}> <ShinyCheck shinyCheck={this.props.myShiny} /></div>
             <Configure filterName={this.props.filterByName} steps={this.props.activePokemon["HATCH STEPS"]} pokedex={this.props.pokedex} filters={this.props.filters}  addFilter={this.props.addFilter} removeFilter={this.props.removeFilter} url={this.props.url} moves={this.props.moves} pokemon={this.props.activePokemon}/>
             <PokeView  selectPokemon={this.props.selectPokemon} addFilter={this.props.addFilters} pokemon={this.props.pokedex} />
