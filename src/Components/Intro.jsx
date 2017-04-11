@@ -1,7 +1,8 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
+const style1 = {
     left: '30%',
     height: 'auto',
     width: 'auto',
@@ -10,13 +11,19 @@ const style = {
     position: 'relative',
 };
 
+const style2 = {
+    margin: 12,
+    float: 'left',
+};
+
+
 export default class Intro extends React.Component {
-//Testing this change
+
 
     render(){
         return (
             <div style={{width: '100%'}}>
-                <Paper style={style} zDepth={5}>
+                <Paper style={style1} zDepth={5}>
                     <div style={{height: '192px', width:'192px', }} >
 
                         <h2>Welcome to Hatchr! </h2>
@@ -33,8 +40,9 @@ export default class Intro extends React.Component {
                             will affect which of these many stats, abilities, natures, and moves can be passed down from
                             the parents to a child. </p>
 
-                    </div>
 
+                    </div>
+                    <RaisedButton label="Default" primary={true} style={style} />
                 </Paper>
 
             </div>
