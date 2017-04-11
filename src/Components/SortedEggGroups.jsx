@@ -2,11 +2,13 @@
  * Created by ali-meysammohebbi on 2017-03-13.
  */
 import React, {Component} from 'react';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import AutoComplete from 'material-ui/AutoComplete';
+import Group from './DisplayFilter';
 
 
-var eggType = ["Monster", "Water 1", "Water 2", "Water 3", "Bug", "Grass", "Dragon", "Flying", "Field", "Fairy", "Ditto", "Human-Like", "Mineral", "Amorphous", "Undiscovered"];
+
+let eggType = ["monster", "water 1", "water 2", "water 3", "bug", "grass", "dragon", "flying", "field",
+    "fairy", "ditto", "human-like", "mineral", "amorphous", "undiscovered"];
 export default class SortedEggGroups extends Component{
     constructor(props){
         super(props);
@@ -15,29 +17,31 @@ export default class SortedEggGroups extends Component{
         };
     }
 
-
-
-    handleChange(event, value){
-        console.log(value);
-        this.setState({value: value});
+    handleUpdateInput(value) {
+        if (eggType.includes(value)){
+            this.props.addFilter(value);
+        }
+    }
+    nameFilter(event){
+        if (event.keyCode == 13){
+            this.props.filterName(event.target.value);
+        }
     }
 
-    render(){
-        let displayeggType = eggType.map((eggtype, id) => {
-            return (<MenuItem key={id}
-                              value={id}
-                              primaryText={eggtype}/> )
-        })
+    render() {
         return (
-            <SelectField
-                floatingLabelText="SortedEggGroups"
-                value={this.state.value}
-                onChange={this.handleChange.bind(this)}
-                autoWidth={true}
-            >
-                {displayeggType}
-            </SelectField>
+            <div>
+                <AutoComplete
+                    hintText="Type anything"
+                    dataSource={eggType}
+                    onUpdateInput={this.handleUpdateInput.bind(this)}
+                    floatingLabelText="Egg Group Filter"
+                    fullWidth={true}
+                    onKeyDown={this.nameFilter.bind(this)}
+                />
+                <Group removeFilter={this.props.removeFilter} filters={this.props.filters} />
+            </div>
 
         );
     }
-}
+};

@@ -4,13 +4,15 @@
 import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-let abilities = ["Static", "Lightning Rod"];
+import Index from '../Containers/IndexContainer';
+
+
+let abilities = ["Static", "Lightning Rod", " "];
 export default class Abilities extends Component{
     constructor(props){
         super(props);
         this.state = {value: 1};
     }
-
 
 
     handleChange(event, value){
