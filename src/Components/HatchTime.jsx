@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-export default class HatchTime extends React.Components{
+export default class HatchTime extends React.Component{
 
     constructor(props){
         super(props);
@@ -21,7 +21,7 @@ export default class HatchTime extends React.Components{
         <div>
             <p>The number of steps to hatch the egg is {this.props.value}</p><br/>
             <p>The number of steps with either "Flame Body" or "Magma Armor" reduces to {(this.props.value)/2}</p>
-            </div>
+        </div>
         );
     }
 
